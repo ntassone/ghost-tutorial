@@ -497,6 +497,9 @@ textarea {
     &:hover {
       color: $link-color;
     }
+    &.disabled {
+      display: none;
+    }
   }
   #previous-lesson {
     float: left;

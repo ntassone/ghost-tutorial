@@ -1530,6 +1530,8 @@ textarea {
       position: relative; }
     .post-footer a:hover {
       color: #3069b9; }
+    .post-footer a.disabled {
+      display: none; }
   .post-footer #previous-lesson {
     float: left; }
     .post-footer #previous-lesson:hover span {
