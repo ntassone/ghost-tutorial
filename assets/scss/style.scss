@@ -11,9 +11,11 @@ html {
   @include box-sizing(border-box);
 }
 
+$header-height: 74px;
+
 body {
   font-family: $font-serif;
-  padding-top: 74px;
+  padding-top: $header-height;
   &.home-template {
     padding-top: 0;
   }
@@ -187,9 +189,15 @@ textarea {
 
 #site-search-results {
   $search-results-color: lighten($blue-dark, 7%);
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: $header-height;
   z-index: 1001;
   background: $search-results-color;
+  .home-template & {
+    position: relative;
+    top: 0;
+  }
   &:before {
     display: none;
     content: "";

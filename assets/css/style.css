@@ -1265,9 +1265,14 @@ textarea {
       top: 2px; }
 
 #site-search-results {
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 74px;
   z-index: 1001;
   background: #425c77; }
+  .home-template #site-search-results {
+    position: relative;
+    top: 0; }
   #site-search-results:before {
     display: none;
     content: "";
