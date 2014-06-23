@@ -1338,6 +1338,7 @@ textarea {
     .preview-list .post header {
       position: relative; }
       .preview-list .post header:before {
+        display: none;
         content: counter(post);
         position: absolute;
         left: -54px;

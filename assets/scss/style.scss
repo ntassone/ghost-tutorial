@@ -269,6 +269,7 @@ textarea {
     header {
       position: relative;
       &:before {
+        display: none;
 
         $counter-size: 30px;
 
