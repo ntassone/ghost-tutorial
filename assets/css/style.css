@@ -213,7 +213,7 @@ table {
 .icon-left-sm:before {
   content: '\e805'; }
 
-.icon-right-lg:before {
+.icon-right-sm:before {
   content: '\e806'; }
 
 .icon-up-sm:before {
@@ -1114,9 +1114,10 @@ html {
   box-sizing: border-box; }
 
 body {
-  font-family: "source-serif-pro", Georgia, serif; }
-  body.post-template {
-    padding-top: 74px; }
+  font-family: "source-serif-pro", Georgia, serif;
+  padding-top: 74px; }
+  body.home-template {
+    padding-top: 0; }
 
 .site-head {
   background: url("../img/blueprint.png");
@@ -1149,9 +1150,15 @@ textarea {
     background: #1a86ff; }
 
 .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
   padding: 14px 15px 16px;
   background: url("../img/blueprint.png");
   background-size: 150px 150px;
+  border-top: 6px solid #7ed321;
   color: rgba(255, 255, 255, 0.75);
   font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   *zoom: 1; }
@@ -1160,6 +1167,15 @@ textarea {
     display: table; }
   .site-nav:after {
     clear: both; }
+  .home-template .site-nav {
+    position: relative;
+    background: #354a60;
+    z-index: 999;
+    border-top: 0; }
+    .home-template .site-nav input[type="text"],
+    .home-template .site-nav input[type="search"] {
+      background: #1b2b3b;
+      border-color: #1b2b3b; }
   .site-nav a {
     color: #ccc;
     color: rgba(255, 255, 255, 0.75);
@@ -1169,8 +1185,6 @@ textarea {
     font-weight: 600; }
     .site-nav a:hover {
       color: white; }
-  .home-template .site-nav {
-    background: #354a60; }
   .site-nav ul {
     list-style: none;
     margin: 0;
@@ -1193,25 +1207,14 @@ textarea {
   .site-nav input[type="text"],
   .site-nav input[type="search"] {
     padding: 5px;
-    background: #1b2b3b;
-    border: 2px solid #1b2b3b;
+    background: #304c68;
+    border: 2px solid #304c68;
     border-radius: 2px;
     color: white;
     font-size: 1.6rem; }
     .site-nav input[type="text"]:focus,
     .site-nav input[type="search"]:focus {
       outline: none; }
-  .post-template .site-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1001;
-    width: 100%;
-    border-top: 6px solid #7ed321; }
-    .post-template .site-nav input[type="text"],
-    .post-template .site-nav input[type="search"] {
-      background: #304c68;
-      border-color: #304c68; }
   .site-nav .site-nav-left {
     float: left; }
   .site-nav .site-nav-right {
@@ -1224,7 +1227,7 @@ textarea {
   left: 50%;
   width: 50px;
   height: 50px;
-  margin-left: -50px;
+  margin-left: -25px;
   background: url("../img/logo_angular.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -1258,9 +1261,6 @@ textarea {
     .info-panel form button > span {
       position: relative;
       top: 2px; }
-
-.site-search #search-show {
-  font-size: 2.2rem; }
 
 #site-search-results {
   position: relative;
@@ -1441,6 +1441,12 @@ textarea {
     @media (max-width: 600px) {
       .post-template .post.ouija-active {
         right: 280px; } }
+  .post-template .post.page {
+    width: 80%;
+    max-width: 700px; }
+    @media (max-width: 600px) {
+      .post-template .post.page {
+        width: 95%; } }
 .post-template #sidebar {
   position: fixed;
   float: left;
@@ -1507,10 +1513,31 @@ textarea {
     display: table; }
   .post-footer:after {
     clear: both; }
+  .post-footer a {
+    text-decoration: none;
+    font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.75rem;
+    color: #5a6672; }
+    .post-footer a span {
+      position: relative; }
+    .post-footer a:hover {
+      color: #3069b9; }
   .post-footer #previous-lesson {
     float: left; }
+    .post-footer #previous-lesson:hover span {
+      left: -3px; }
   .post-footer #next-lesson {
     float: right; }
+    .post-footer #next-lesson:hover span {
+      right: -3px; }
+
+.tag-archive-header h4 {
+  margin-left: -15px;
+  color: #529d00; }
+  .tag-archive-header h4 span {
+    color: rgba(126, 211, 33, 0.75);
+    font-size: .8em;
+    margin-right: 15px; }
 
 .ouija .ouija-login h5 {
   font-weight: 400; }

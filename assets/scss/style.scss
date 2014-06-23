@@ -13,8 +13,9 @@ html {
 
 body {
   font-family: $font-serif;
-  &.post-template {
-    padding-top: 74px;
+  padding-top: 74px;
+  &.home-template {
+    padding-top: 0;
   }
 }
 
@@ -53,12 +54,30 @@ textarea {
 
 //== Main Navigation
 .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
   padding: 14px 15px 16px;
   background: url('../img/blueprint.png');
   background-size: 150px 150px;
+  border-top: 6px solid $green;
   color: fade-out(white, .25);
   font-family: $font-sans;
   @include clearfix();
+  //Reset for home
+  .home-template & {
+    position: relative;
+    background: $blue-dark;
+    z-index: 999;
+    border-top: 0;
+    input[type="text"],
+    input[type="search"] {
+      background: $blue-darkest;
+      border-color: $blue-darkest;
+    }
+  }
   a {
     color: #ccc;
     color: fade-out(white, .25);
@@ -69,9 +88,6 @@ textarea {
     &:hover {
       color: white;
     }
-  }
-  .home-template & {
-    background: $blue-dark;
   }
   ul {
     list-style: none;
@@ -102,27 +118,13 @@ textarea {
   input[type="text"],
   input[type="search"] {
     padding: 5px;
-    background: $blue-darkest;
-    border: 2px solid $blue-darkest;
+    background: lighten($blue-darkest, 13%);
+    border: 2px solid lighten($blue-darkest, 13%);
     border-radius: 2px;
     color: white;
     font-size: 1.6rem;
     &:focus {
       outline: none;
-    }
-  }
-  //Internal nav for post pages
-  .post-template & {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1001;
-    width: 100%;
-    border-top: 6px solid $green;
-    input[type="text"],
-    input[type="search"] {
-      background: lighten($blue-darkest, 13%);
-      border-color: lighten($blue-darkest, 13%);
     }
   }
   .site-nav-left {
@@ -142,7 +144,7 @@ textarea {
   left: 50%;
   width: $logo-size;
   height: $logo-size;
-  margin-left: -$logo-size;
+  margin-left: -($logo-size/2);
   background: url('../img/logo_angular.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -179,12 +181,6 @@ textarea {
         top: 2px;
       }
     }
-  }
-}
-
-.site-search {
-  #search-show {
-    font-size: 2.2rem;
   }
 }
 
@@ -371,7 +367,6 @@ textarea {
 }
 
 //== Post Page
-
 .post-template {
   [role="main"] {
     padding: 15px;
@@ -387,6 +382,13 @@ textarea {
       right: 320px;
       @include breakpoint(small) {
         right: 280px;
+      }
+    }
+    &.page {
+      width: 80%;
+      max-width: 700px;
+      @include breakpoint(small) {
+        width: 95%;
       }
     }
   }
@@ -470,18 +472,48 @@ textarea {
   }
 }
 
-//== Post Footer
 
+//== Post Footer
 .post-footer {
   @include clearfix();
+  a {
+    text-decoration: none;
+    font-family: $font-sans;
+    font-size: 1.75rem;
+    color: lighten($body-color, 20%);
+    span {
+      position: relative;
+    }
+    &:hover {
+      color: $link-color;
+    }
+  }
   #previous-lesson {
     float: left;
+    &:hover {
+      span { left: -3px; }
+    }
   }
   #next-lesson {
     float: right;
+    &:hover {
+      span { right: -3px; }
+    }
   }
 }
 
+//== Tag Template
+.tag-archive-header {
+  h4 {
+    margin-left: -15px;
+    color: $green-dark;
+    span {
+      color: fade-out($green, .25);
+      font-size: .8em;
+      margin-right: 15px;
+    }
+  }
+}
 
 //== Ouija
 .ouija {
