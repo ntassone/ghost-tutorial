@@ -1,4 +1,4 @@
-gi-angular-tutorial
+Ghost Tutorial Theme
 ===================
 
-Website for GoInstant's Angular tutorial
+Website for GoInstant's Angular tutorial.

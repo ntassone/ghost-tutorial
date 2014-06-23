@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <a class="blog-logo" href="{{@blog.url}}"><img src="{{asset "img/logo_angular.png"}}" alt="Blog Logo" /></a>
+            <h1 class="blog-title">Learn AngularJS. <strong>Fast.</strong></h1>
+            <a href="#tutorials" class="btn">Ready? Let's go!</a>
+        </div>
+    </div>
+</header>
+<nav class="site-nav">
+    <ul class="list-view-toggle site-nav-left">
+        <li class="active">
+            <a href="#" title="List view"><span class="icon-list"></span></a>
+        </li>
+        <li>
+            <a href="#" title="Grid view"><span class="icon-grid"></span></a>
+        </li>
+    </ul>
+    <div class="info-panel site-nav-right">
+        <a href="/about"><span class="icon-info"></span> About</a>
+        <form class="site-search">
+            <input type="search" id="site-search"/>
+            <button type="submit">
+                <span class="icon-search"></span>
+            </button>
+        </form>
+    </div>
+</nav>
+<section id="site-search-results">
+</section>
+{{! The main content area on the homepage }}
+<main class="content" role="main" id="tutorials">
+
+    <div class="preview-list">
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+
+    <div class="post-preview">
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="in "}}</span>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt}}&hellip;</p>
+            </section>
+        </article>
+    </div>
+
+    {{/foreach}}
+    </div>
+
+    {{!! After all the posts, we have the previous/next pagination links }}
+    {{! pagination}}
+
+</main>

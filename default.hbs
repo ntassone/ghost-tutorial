@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" href="http://cdn.goinstant.net/external/ouija/latest/ouija.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+    <link rel="stylesheet" href="{{asset "css/vendor/prism.css"}}"/>
+    <script type="text/javascript" src="//use.typekit.net/yuc4vkt.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="site-footer">
+         <section class="copyright">Made with <span class="icon-heart"></span> by the team at <a href="http://goinstant.com" class="logo"><img src="{{ asset "img/logo_gi_sm.png"}}" alt="GoInstant" height="24"></a>
+            <small>Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></small>
+         </section>
+         <section class="social">
+            <ul>
+                <li>View the source on <a href="http://github.com/goinstant/linkylink">Github</a></li>
+                <li><iframe src="http://ghbtns.com/github-btn.html?user=goinstant&repo=reponame&type=watch"
+  allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe></li>
+                <li><a href="https://twitter.com/share" class="twitter-share-button" data-text="I'm learning Angular! It's easy!" data-via="goinstant">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+            </ul>
+         </section>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/headroom.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+    {{#with post}}
+    <script>
+      window.ouija_connect_url = 'https://goinstant.net/ntassone/tut';
+      window.ouija_identifier = {{id}};
+    </script>
+    <script src="https://cdn.goinstant.net/v1/platform.min.js"></script>
+    <script src="http://cdn.goinstant.net/external/ouija/latest/ouija.min.js"></script>
+    {{/with}}
+
+</body>
+</html>

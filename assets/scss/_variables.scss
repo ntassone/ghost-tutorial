@@ -1,0 +1,22 @@
+//== Fonts
+$font-sans: 'source-sans-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: 'source-serif-pro', Georgia, serif;
+$font-mono: 'source-code-pro', Courier, monospace;
+
+//== Colors
+$green: #7ED321;
+$green-dark: #529D00;
+$red: #ff0000;
+$red-dark: #B22F2F;
+$red-faded: #FFE5E5;
+$blue: #3775CB;
+$blue-dark: #354A60;
+$blue-darkest: #1B2B3B;
+$blue-bright: #0079FF;
+
+$body-color: #2D3339;
+$link-color: darken($blue, 5%);
+
+//== Defaults
+$border-radius: 2px;
+$transition: all ease .15s;

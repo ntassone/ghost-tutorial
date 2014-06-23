@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<nav class="site-nav" id="site-nav">
+    <div class="utility-nav site-nav-left">
+        <a href="/"><span class="icon-list"></span> <span class="hide-small">See all tutorials</span></a>
+    </div>
+    <a class="course-logo" href="/"></a>
+    <div class="info-panel site-nav-right">
+        <a href="/about"><span class="icon-info"></span> <span class="hide-small">About</span></a>
+        <form class="site-search">
+            <input type="search" id="site-search"/>
+            <button type="submit">
+                <span class="icon-search"></span>
+            </button>
+        </form>
+    </div>
+</nav>
+<section id="site-search-results">
+</section>
+
+<main class="content" role="main">
+
+
+    <article class="{{post_class}}">
+
+        {{#post}}
+
+        <aside id="sidebar">
+            <h6 class="lesson-number">
+                Lesson #1
+            </h6>
+            <div class="post-meta">
+                <div class="tags"><span class="icon-tag"></span>{{tags separator=", "}}</div>
+                <time datetime="{{date format="YYYY-MM-DD"}}"><span class="icon-clock"></span> {{date format='DD MMM YYYY'}}</time>
+            </div>
+        </aside>
+
+        {{! Everything inside the #post tags pulls data from the post }}
+
+            <section class="post-content">
+
+                <h1 class="post-title">{{{title}}}</h1>
+                {{content}}
+
+                <footer class="post-footer">
+                    <a href="#" id="previous-lesson"><span class="icon-left-sm"></span> Previous Lesson</a>
+                    <a href="#" id="next-lesson"><span class="icon-right-sm"></span> Next Lesson</a>
+                </footer>
+
+            </section>
+
+        {{/post}}
+
+    </article>
+
+</main>
