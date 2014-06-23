@@ -1189,21 +1189,23 @@ textarea {
     list-style: none;
     margin: 0;
     padding: 0; }
-  .site-nav .list-view-toggle li {
-    display: inline-block; }
-    .site-nav .list-view-toggle li a {
-      display: block;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 2rem; }
-    .site-nav .list-view-toggle li.active a {
-      background: #7ed321;
-      color: #354a60; }
-    .site-nav .list-view-toggle li span {
-      position: relative;
-      top: 4px; }
+  .site-nav .list-view-toggle {
+    display: none; }
+    .site-nav .list-view-toggle li {
+      display: inline-block; }
+      .site-nav .list-view-toggle li a {
+        display: block;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 2rem; }
+      .site-nav .list-view-toggle li.active a {
+        background: #7ed321;
+        color: #354a60; }
+      .site-nav .list-view-toggle li span {
+        position: relative;
+        top: 4px; }
   .site-nav input[type="text"],
   .site-nav input[type="search"] {
     padding: 5px;
