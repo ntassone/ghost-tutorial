@@ -60,9 +60,20 @@
       }
     });
 
+    //Hide Header
     var myElement = document.querySelector("#site-nav");
     var headroom  = new Headroom(myElement);
     headroom.init();
+
+    //Details of post
+    var postDetails = $("#post-details")
+    var postSubtitle = postDetails.data("subtitle");
+    var postNext = postDetails.data("post-next");
+    var postPrev = postDetails.data("post-prev");
+
+    $('.post-subtitle').html(postSubtitle);
+    $('#previous-lesson').attr('href', postPrev);
+    $('#next-lesson').attr('href', postNext);
 
 }(jQuery));
 

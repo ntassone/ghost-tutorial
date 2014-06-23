@@ -1481,7 +1481,7 @@ textarea {
     top: 3px;
     font-size: .9em; }
 
-#sidebar .lesson-number {
+#sidebar .post-subtitle {
   background: red;
   color: white;
   display: inline-block;
@@ -1490,7 +1490,7 @@ textarea {
   border-radius: 2px;
   font-size: 1.6rem; }
   @media (max-width: 600px) {
-    #sidebar .lesson-number {
+    #sidebar .post-subtitle {
       display: block;
       text-align: center; } }
 #sidebar .tags {
@@ -1531,6 +1531,8 @@ textarea {
     .post-footer #next-lesson:hover span {
       right: -3px; }
 
+.tag-archive-header:after {
+  display: none; }
 .tag-archive-header h4 {
   margin-left: -15px;
   color: #529d00; }
@@ -1538,6 +1540,10 @@ textarea {
     color: rgba(126, 211, 33, 0.75);
     font-size: .8em;
     margin-right: 15px; }
+
+#post-details {
+  visibility: hidden;
+  display: none; }
 
 .ouija .ouija-login h5 {
   font-weight: 400; }

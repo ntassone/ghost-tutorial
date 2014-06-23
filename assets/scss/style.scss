@@ -439,7 +439,7 @@ textarea {
 }
 
 #sidebar {
-  .lesson-number {
+  .post-subtitle {
     background: $red;
     color: white;
     display: inline-block;
@@ -504,6 +504,9 @@ textarea {
 
 //== Tag Template
 .tag-archive-header {
+  &:after {
+    display: none;
+  }
   h4 {
     margin-left: -15px;
     color: $green-dark;
@@ -513,6 +516,12 @@ textarea {
       margin-right: 15px;
     }
   }
+}
+
+//== Hidden Details
+#post-details {
+  visibility: hidden;
+  display: none;
 }
 
 //== Ouija
