@@ -1469,6 +1469,7 @@ textarea {
         display: block; } }
 .post-template .post-content {
   float: left;
+  width: 100%;
   padding-left: 235px; }
   @media (max-width: 600px) {
     .post-template .post-content {
